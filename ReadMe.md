@@ -1,1 +1,1 @@
-Runs Jenkins Pipeline : runs: restore -> build -> test -> publish -> Docker build & push -> Deploy
+Runs Jenkins Pipeline : restore -> build -> test -> publish -> Docker build & push -> Deploy
