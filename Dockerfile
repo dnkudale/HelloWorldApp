@@ -1,12 +1,14 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
-WORKDIR /app
- 
+# Build stage
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY . .
-RUN dotnet publish -c Release -o /app
  
-FROM base AS final
+COPY . ./
+RUN dotnet restore HelloWorldApp.csproj
+RUN dotnet publish HelloWorldApp.csproj -c Release -o /app
+ 
+# Runtime image
+FROM mcr.microsoft.com/dotnet/runtime:7.0
 WORKDIR /app
 COPY --from=build /app .
+ 
 ENTRYPOINT ["dotnet", "HelloWorldApp.dll"]
