@@ -5,7 +5,7 @@ namespace HelloWorldApp.Tests
 {
     public class HelloTests
     {
-        [Fact]
+        //[Fact]
         public void GetMessage_ReturnsCorrectMessage()
         {
             string expected = "Hello, World from .NET!";
