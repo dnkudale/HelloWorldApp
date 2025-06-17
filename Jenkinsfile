@@ -5,7 +5,7 @@ pipeline {
         DOTNET_ROOT = "${HOME}/.dotnet"
         PATH = "${env.PATH}:${env.DOTNET_ROOT}:${env.DOTNET_ROOT}/tools"
         IMAGE_NAME = 'hello-world-dotnet'
-        VERSION = '1.0.${BUILD_NUMBER}'
+        VERSION = '1.0.0'
     }
  
     stages {
